@@ -48,7 +48,7 @@ function getSPARQL ( $cmd, $subgraph_flag = False ) {
 			$sleep_time = 10;
 			foreach ($http_response_header AS $header) {
 				$matches = array();
-				if ( preg_match ( '/^\s*Retry-After\s*: (\d+)/i' , $header, $matches ) ) {
+				if ( preg_match ( '/^\s*Retry-After\s*:\s*(\d+)/i' , $header, $matches ) ) {
 					$sleep_time = intval($matches[1]);
 				}
 			}
