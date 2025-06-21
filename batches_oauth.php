@@ -275,7 +275,7 @@ $(document).ready ( function () {
 		$data = $row[1];
 		$parts = preg_split('/:/', $data);
 		foreach ($parts AS $data_part) {
-			if (preg_match('/^Q\d+/', $data_part)) {
+			if (preg_match('/^Q\d+$/', $data_part)) {
 				$qids_by_ordinal[$ordinal][] = $data_part;
 				$qid_set[$data_part] = 1;
 			}
