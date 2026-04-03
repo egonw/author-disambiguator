@@ -222,7 +222,7 @@ foreach ( $article_items AS $article ) {
 	$published_in = array() ;
 	foreach ( $article->published_in AS $qt ) {
 		$label = $qid_labels[$qt];
-		$published_in[] = wikidata_link($qt, $label, 'black') . "&nbsp;[<a href='https://scholia.toolforge.org/venue/$qt/curation' target='_blank'>curation</a>]" ;
+		$published_in[] = wikidata_link($qt, $label, 'black') . "&nbsp;[<a href='https://qlever.scholia.wiki/venue/$qt/curation' target='_blank'>curation</a>]" ;
 	}
 	$published_in_list = implode ( ', ', $published_in ) ;
 	
@@ -243,7 +243,7 @@ foreach ( $article_items AS $article ) {
 		$topics = [] ;
 		foreach ( $article->topics AS $qt ) {
 			$label = $qid_labels[$qt];
-			$topics[] = wikidata_link($qt, $label, 'brown') . "&nbsp;[<a href='https://scholia.toolforge.org/topic/$qt/curation' target='_blank'>curation</a>]" ;
+			$topics[] = wikidata_link($qt, $label, 'brown') . "&nbsp;[<a href='https://qlever.scholia.wiki/topic/$qt/curation' target='_blank'>curation</a>]" ;
 		}
 		print implode ( '; ' , $topics ) ;
 	}

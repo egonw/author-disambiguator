@@ -197,8 +197,8 @@ print implode("|", $identifier_display);
 print "</div>" ;
 print wikidata_link($author_qid, "Wikidata Item", '') ;
 print ' | ' ;
-print "<a target='_blank' href='https://scholia.toolforge.org/author/$author_qid'>Scholia Profile</a>" ;
-print " [<a target='_blank' href='https://scholia.toolforge.org/author/$author_qid/curation'>curation</a>]" ;
+print "<a target='_blank' href='https://qlever.scholia.wiki/author/$author_qid'>Scholia Profile</a>" ;
+print " [<a target='_blank' href='https://qlever.scholia.wiki/author/$author_qid/curation'>curation</a>]" ;
 print ' | ' ;
 print "<a target='_blank' href='$reasonator_prefix$author_qid'>Reasonator</a>" ;
 print ' | ' ;
@@ -343,7 +343,7 @@ foreach ( $article_items AS $article ) {
 	foreach ( $article->published_in AS $qt ) {
 		$label = $qid_labels[$qt];
 		$venue_counter[$qt] = isset($venue_counter[$qt]) ? $venue_counter[$qt]+1 : 1 ;
-		$published_in[] = wikidata_link($qt, $label, 'black') . "&nbsp;[<a href='https://scholia.toolforge.org/venue/$qt/curation' target='_blank'>curation</a>]" ;
+		$published_in[] = wikidata_link($qt, $label, 'black') . "&nbsp;[<a href='https://qlever.scholia.wiki/venue/$qt/curation' target='_blank'>curation</a>]" ;
 	}
 	$published_in_list = implode ( ', ', $published_in ) ;
 	
@@ -374,7 +374,7 @@ foreach ( $article_items AS $article ) {
 		foreach ( $article->topics AS $qt ) {
 			$label = $qid_labels[$qt];
 			$topic_counter[$qt] = isset($topic_counter[$qt]) ? $topic_counter[$qt]+1 : 1 ;
-			$topics[] = wikidata_link($qt, $label, 'brown') . "&nbsp;[<a href='https://scholia.toolforge.org/topic/$qt/curation' target='_blank'>curation</a>]" ;
+			$topics[] = wikidata_link($qt, $label, 'brown') . "&nbsp;[<a href='https://qlever.scholia.wiki/topic/$qt/curation' target='_blank'>curation</a>]" ;
 		}
 		print implode ( '; ' , $topics ) ;
 	}
@@ -400,7 +400,7 @@ print "<h2>Common author items in these papers</h2>" ;
 print "<ul>" ;
 foreach ( $author_qid_counter AS $qt => $cnt ) {
 	$label = $qid_labels[$qt];
-	print "<li><a href='?limit=50&id=$qt' style='color:green'>$label</a> (<a href='?limit=$article_limit&id=$author_qid&filter=wdt%3AP50+wd%3A$qt'>$cnt&times;</a>) - <a href='match_multi_authors.php?limit=50&id=$author_qid+$qt'>Unmatched with both names</a> - <a href='https://scholia.toolforge.org/authors/$author_qid,$qt'>Scholia comparison</a></li>" ;
+	print "<li><a href='?limit=50&id=$qt' style='color:green'>$label</a> (<a href='?limit=$article_limit&id=$author_qid&filter=wdt%3AP50+wd%3A$qt'>$cnt&times;</a>) - <a href='match_multi_authors.php?limit=50&id=$author_qid+$qt'>Unmatched with both names</a> - <a href='https://qlever.scholia.wiki/authors/$author_qid,$qt'>Scholia comparison</a></li>" ;
 }
 print "</ul>" ;
 
